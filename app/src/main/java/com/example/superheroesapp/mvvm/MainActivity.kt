@@ -15,7 +15,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.superheroesapp.ui.theme.YellowCustom
 
 class MainActivity : ComponentActivity() {
@@ -26,8 +29,16 @@ class MainActivity : ComponentActivity() {
             Scaffold(
                 topBar = {
                     TopAppBar(
-                        title = { Text(text = "Superheroes") },
-                        backgroundColor = Color.Magenta,
+                        title = { Text( text = "Superheroes",
+                                        fontSize = 25.sp,
+                                        fontWeight = FontWeight.Bold,
+                             modifier = Modifier.fillMaxWidth(),
+                             textAlign = TextAlign.Center
+
+                        )
+                                },
+
+                        backgroundColor = YellowCustom,
 
                     )
                 }
@@ -58,26 +69,6 @@ class MainActivity : ComponentActivity() {
 
 
 
-
-
-//            Row( verticalAlignment = Alignment.Top,
-//                 horizontalArrangement = Arrangement.Center,
-//
-//                 modifier = Modifier
-//                     .fillMaxWidth()
-//                     .background(Color.Magenta)
-//                     .size(height = 56.dp, width = 100.dp)
-//
-//
-//            ){
-//                Text(
-//                    text = AppText(),
-//                   // modifier = Modifier.align(Alignment.CenterHorizontally)
-//
-//                )
-//
-//
-//            }
 
 //
 //            LazyColumn(
