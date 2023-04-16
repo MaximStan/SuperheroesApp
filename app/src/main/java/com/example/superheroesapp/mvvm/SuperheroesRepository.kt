@@ -4,7 +4,7 @@ import com.example.superheroesapp.R
 
 object SuperheroesRepository {
 
-    val listOfHeroes = listOf(
+    val listOfHeroes = listOf<SuperheroItemModel>(
         SuperheroItemModel(
             title = "Nick the Night & Day",
             content = "The jetpack hero",
@@ -39,6 +39,18 @@ object SuperheroesRepository {
             title = "Dynamic Yasmine",
             content = "Ability to shift......",
             imageId = R.drawable.android_superhero6
+        ),
+
+        SuperheroItemModel(
+            title = "Nick the Night & Day",
+            content = "The jetpack hero",
+            imageId = R.drawable.android_superhero1
+        ),
+
+        SuperheroItemModel(
+            title = "Reality Protector",
+            content = "Understands the absolute truth",
+            imageId = R.drawable.android_superhero2
         ),
 
 

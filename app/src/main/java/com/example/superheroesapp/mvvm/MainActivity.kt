@@ -8,6 +8,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
@@ -19,6 +20,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.superheroesapp.ui.theme.SuperheroesAppTheme
+
 import com.example.superheroesapp.ui.theme.YellowCustom
 
 class MainActivity : ComponentActivity() {
@@ -26,38 +29,48 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Scaffold(
-                topBar = {
-                    TopAppBar(
-                        title = { Text( text = "Superheroes",
-                                        fontSize = 25.sp,
-                                        fontWeight = FontWeight.Bold,
-                             modifier = Modifier.fillMaxWidth(),
-                             textAlign = TextAlign.Center
 
-                        )
-                                },
+            SuperheroesAppTheme{
 
-                        backgroundColor = YellowCustom,
+                Scaffold(
+                    topBar = {
+                        TopAppBar( modifier = Modifier.height(72.dp),
+                            title = { Text( text = "Superheroes",
+                                fontSize = 25.sp,
+                                fontWeight = FontWeight.Bold,
+                                modifier = Modifier.fillMaxWidth(),
+                                textAlign = TextAlign.Center
 
-                    )
-                }
-            ) {
-                LazyColumn(
+                            )
+                            },
 
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .background(color = YellowCustom),
+                            backgroundColor = MaterialTheme.colors.background,
+
+                            )
+                    }
                 ) {
-                    items(SuperheroesRepository.listOfHeroes){ item ->
-                        SuperheroRow(item_Prm = item)
+                    LazyColumn(
+
+                        modifier = Modifier
+                            .padding( top = 8.dp, bottom = 8.dp)
+                            .fillMaxSize()
+                            .background(color = MaterialTheme.colors.background),
+                    ) {
+                        items(SuperheroesRepository.listOfHeroes){ item ->
+                            SuperheroRow(item_Prm = item)
+
+                        }
 
                     }
 
+
                 }
 
 
+
+
             }
+
 
 
         }
@@ -67,26 +80,6 @@ class MainActivity : ComponentActivity() {
 
 
 
-
-
-
-//
-//            LazyColumn(
-//
-//                modifier = Modifier
-//                    .fillMaxSize()
-//                    .background(color = YellowCustom),
-//            ) {
-//                items(SuperheroesRepository.listOfHeroes){ item ->
-//                   SuperheroRow(item_Prm = item)
-//
-//                }
-//
-//                }
-//
-//            }
-//        }
-//    }
 
 
 
